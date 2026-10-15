@@ -1,0 +1,22 @@
+{% extends "festivals/layout.html" %}
+
+{% block title %}{{ festival.name }}{% endblock %}
+
+{% block content %}
+<h1>{{ festival.name }}</h1>
+<p>Location: {{ festival.location }}</p>
+<p>Capacity: {{ festival.capacity }}</p>
+
+<h2>Events</h2>
+{% if events %}
+    <ul>
+        {% for event in events %}
+            <li>{{ event.name }} - {{ event.status }}</li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>Pas d'events !</p>
+{% endif %}
+
+<a href="{% url 'festivals:list' %}">Back to list</a>
+{% endblock %}

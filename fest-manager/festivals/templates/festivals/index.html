@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Festival</title>
+</head>
+<body>
+    Test
+    <ol>
+
+        {% block content %}
+
+        {% for x in festival %}
+ <li>
+        {{x.name }}
+        {% endfor %}
+</li>
+        {% endblock content %}
+
+    </ol>
+</body>
+</html>

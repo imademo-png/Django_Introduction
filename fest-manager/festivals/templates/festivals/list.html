@@ -1,0 +1,17 @@
+{% extends "festivals/layout.html" %}
+
+{% block title %}Festivals{% endblock %}
+
+{% block content %}
+<h1>Festivals</h1>
+<ul>
+    {% for festival in festivals %}
+        <li>
+            <a href="{% url 'festivals:detail' festival.id %}">{{ festival.name }}</a>
+            — {{ festival.location }}
+        </li>
+    {% empty %}
+        <li>No festivals.</li>
+    {% endfor %}
+</ul>
+{% endblock %}
