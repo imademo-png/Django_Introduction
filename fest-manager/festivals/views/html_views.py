@@ -1,5 +1,8 @@
+# Vues "site web" : elles renvoient des pages HTML via des templates.
 from django.http import HttpResponse
 from django.views.generic import ListView, DetailView
+
+# ".." = remonter d'un dossier (on est dans festivals/views/, models.py est dans festivals/)
 from ..models import Festival
 
 # def index(request):
@@ -9,10 +12,12 @@ def index(request):
     return HttpResponse("Hello, world. You're at the Festival index.")
 
 
+
 class FestivalListView(ListView):
     model = Festival
     template_name = 'festivals/list.html'
     context_object_name = 'festivals'
+
 
 
 class FestivalDetailView(DetailView):
